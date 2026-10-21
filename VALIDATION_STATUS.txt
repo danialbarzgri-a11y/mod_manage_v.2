@@ -1,0 +1,14 @@
+SovereignCore 1.3.0-forge-1.20.1 validation status
+
+PASSED:
+- Java 17 static compilation of all project Java sources against local API-signature stubs.
+- Forge mod metadata parsed and version constraints checked.
+- GitHub Actions workflow and manual template are identical.
+- Source checks for selected critical fixes (vanilla ban-list profile handling, rank deletion action, timestamp-based audit sorting).
+
+NOT YET VERIFIED:
+- ForgeGradle production build/reobfuscation against real Forge/Minecraft dependencies.
+- Launching the mod on an actual Forge 1.20.1 dedicated server and client.
+- Gameplay, packet compatibility, rank/security integration, and persistence/restore in a real world.
+
+Reason: this execution environment could not resolve/download the required ForgeGradle and Minecraft dependencies. The included GitHub Actions workflow is intended to run the real build in GitHub's hosted environment. A successful build must still be followed by a staging-server test.
