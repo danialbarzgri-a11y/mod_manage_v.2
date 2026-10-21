@@ -1,0 +1,17 @@
+SovereignCore 1.3.1-forge-1.20.1 validation status
+
+CHANGES IN THIS PATCH:
+- Replaced dashboard card widgets that were clamped into the same bottom coordinates with clipped, scrollable custom cards.
+- Replaced overflowing sidebar navigation widgets with a clipped, scrollable navigation list.
+- Made dashboard/sidebar click handling ignore gaps between controls.
+- Fixed the ban-list compile error: UserBanList.getUserList() returns String[] in Minecraft 1.20.1 and is processed with Arrays.stream(...).
+- Added pack.mcmeta (resource pack format 15 for Minecraft 1.20.1).
+- Aligned the development dependency to Forge 47.4.10, matching the tested client log version.
+- Bumped the project version to 1.3.1-forge-1.20.1.
+
+NOT YET VERIFIED:
+- A real ForgeGradle production build/reobfuscation against downloaded Forge/Minecraft dependencies.
+- Launching the patched JAR on an actual Forge 1.20.1 client and dedicated server.
+- Gameplay, packet compatibility, rank/security integration, persistence/restore, and interactions across every screen.
+
+The execution environment does not have a Gradle executable/wrapper and the ForgeGradle dependencies are not locally available. The included GitHub Actions workflow should perform the real build. Do not publish/use the patched JAR until that build succeeds and a staging server/client test passes.
