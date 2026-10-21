@@ -652,9 +652,9 @@ public final class SovereignCore {
         String needle = cleanKey(search);
         List<String> names = new ArrayList<>();
         try {
-            // UserBanList is keyed by GameProfile, not by username String.
-            names.addAll(java.util.Arrays.stream(server.getPlayerList().getBans().getUserList())
-                    .map(profile -> profile.getName())
+            // In Forge/Minecraft 1.20.1, getUserList() returns a String[] of banned names.
+            // Arrays.stream(...) is required because an array does not have a stream() method.
+            names.addAll(Arrays.stream(server.getPlayerList().getBans().getUserList())
                     .filter(name -> name != null && !name.isBlank())
                     .collect(Collectors.toList()));
         } catch (RuntimeException ex) {
