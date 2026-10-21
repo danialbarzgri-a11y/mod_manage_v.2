@@ -653,7 +653,7 @@ public final class SovereignCore {
         List<String> names = new ArrayList<>();
         try {
             // UserBanList is keyed by GameProfile, not by username String.
-            names.addAll(server.getPlayerList().getBans().getUserList().stream()
+            names.addAll(java.util.Arrays.stream(server.getPlayerList().getBans().getUserList())
                     .map(profile -> profile.getName())
                     .filter(name -> name != null && !name.isBlank())
                     .collect(Collectors.toList()));
